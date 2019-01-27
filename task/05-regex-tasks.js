@@ -31,7 +31,7 @@
  * @return {RegExp}
  */
 function getRegexForGuid() {
-   throw new Error('Not implemented');
+    return /{[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}}/;
 }
 
 
@@ -53,7 +53,7 @@ function getRegexForGuid() {
  *
  */
 function getRegexForPitSpot() {
-   throw new Error('Not implemented');
+   return /p.t/;
 }
 
 
@@ -72,7 +72,7 @@ function getRegexForPitSpot() {
  * @return {RegExp}
  */
 function getRegexForIPv4() {
-   throw new Error('Not implemented');
+   return /^(([0-9\.]{1,2}|[0-2][0-5][0-9])\.){3}([0-9\.]{1,2}|[0-2][0-5][0-9])$/;
 }
 
 
@@ -91,7 +91,7 @@ function getRegexForIPv4() {
  * @return {RegExp}
  */
 function getRegexForSSN() {
-   throw new Error('Not implemented');
+   return /\d(?:\d*[1-9]\d*)-\d(?:\d*[1-9]\d*)-\d(?:\d*[1-9]\d*)/;
 }
 
 
@@ -116,7 +116,8 @@ function getRegexForSSN() {
  *   'Pa55'.match(validator) => false
  */
 function getPasswordValidator(minLength) {
-   throw new Error('Not implemented');
+   var res = new RegExp('^(?=[a-zA-Z0-9]{'+minLength+',})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$');
+   return res;
 }
 
 
